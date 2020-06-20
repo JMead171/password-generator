@@ -26,8 +26,8 @@ This project is to Generate Password a random password.
 ![image](https://user-images.githubusercontent.com/64744763/85205007-5cf4f100-b2e6-11ea-9962-24b573a9db62.png)
 
 # Technology Used
-Language used: JavaScript, HTML, and CSS.
-Main coding logic used: Function(), FOR Loop, Arrays and Math.random.
+Languages: JavaScript, HTML, and CSS. &nbsp;
+Logic: Function(), FOR Loop, Arrays and Math.random.
 
 
 # Working Link
