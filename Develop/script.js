@@ -128,8 +128,9 @@ var generatePassword = function() {
         }
 
         if (yesSymbol === "Y") {
-            var val = Math.floor(Math.random() * 6);
+            var x = Math.floor(Math.random() * 6);
             console.log("Special Char = " + genPassword);
+            console.log(sym);
             genPassword += sym[x];
             i++;
         }
