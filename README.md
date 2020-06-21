@@ -3,27 +3,31 @@ Password Generator.
 
 # Description
 
-This project is to Generate Password a random password.
+This project generates a random password for employees.  Coding was added to an initial starter code.
+The program performs as follows:
 
- - Generate a random password
+ - Welcome the employee message and user hits "OK" to continue
 
- - The FOR Loop
+ - The first step is for the user to select password length from 8-128. Input validation is performed.
 
- - Array
+ - The first criteria is if the user wants lower case letters. Input validation is performed.
 
- - Function()
+ - The second criteria is if the user wants upper case letters. Input validation is performed.
 
- - Set VAriables
+ - The third criteria is if the user wants numbers. Input validation is performed.
 
- - Random Password MAth.Random
+ - The final criteria is if the user wants symbols. Input validation is performed.
 
- - USer input checks
+ - If user selects "N" for all criteria, they are giving a second chance to generate password.
+ 
+ - Generate password is perform based on criteria using arrays and a FOR loop. Then password is displayed on screen.
+
+ - Function(), FOR loop Arrays and Math.random logic is used
 
 
 # Screen Shot
-![image](https://user-images.githubusercontent.com/64744763/85205032-78f89280-b2e6-11ea-9b6b-b187842b6164.png)
-
 ![image](https://user-images.githubusercontent.com/64744763/85205007-5cf4f100-b2e6-11ea-9962-24b573a9db62.png)
+
 
 # Technology Used
 Languages: JavaScript, HTML, and CSS.\
@@ -35,5 +39,5 @@ https://jmead171.github.io/password-generator/
 
 
 # Project status
-Testing
+Complete
 

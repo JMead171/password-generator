@@ -2,7 +2,7 @@
 var abcUpper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var abcLower = "abcdefghijklmnopqrstuvwxyz";
 var num = "0123456789";
-const sym = "!#$%&~";
+const sym = "!#$%&~+<@?*^/;:(=)|{";
 var globalPWlength = 0;
 var yesLower = "N";
 var yesUpper = "N";
@@ -17,14 +17,13 @@ window.alert("Welcome! Please click 'OK' to generate password!");
 var numberCharacters = function() {
     var pwLength = window.prompt("Please select the length of your password. Password can only be bewteen 8 - 128 characters.");
     globalPWlength = parseInt(pwLength);
-    console.log(pwLength);
     if (pwLength === "" || pwLength === null || pwLength < 8 || pwLength > 128) {
         window.alert("You need to provide a valid length! Please try again.");
         return numberCharacters();
     }
 }
 
-// Lower case letters
+// Lower case letters Y/N
 var lowerCasePrompt = function() {
     var lowerCase = window.prompt("Would you like your password to contain lower case letters Y/N ?")
     if (lowerCase === "" || lowerCase === null) {
@@ -44,7 +43,7 @@ var lowerCasePrompt = function() {
     }
 }
 
-//Upper case letters
+//Upper case letters Y/N
 var upperCasePrompt = function() {
     var upperCase = window.prompt("Would you like your password to contain UPPER CASE letters Y/N ?");
     if (upperCase === "" ||upperCase === null) {
@@ -64,7 +63,7 @@ var upperCasePrompt = function() {
     }
 }
 
-//Numbers
+//Numbers Y/N
 var selectNumberPrompt = function() {
     var selectNumber = window.prompt("Would you like your password to contain numbers Y/N ?");
     if (selectNumber === "" || selectNumber === null) {
@@ -84,7 +83,7 @@ var selectNumberPrompt = function() {
     }
 }
 
-//Special characters
+//Special characters Y/N
 var selectSymbolPrompt = function() {
     var selectSymbol = window.prompt("Would you like your password to contain symbols Y/N?");
         if (selectSymbol === "" || selectSymbol === null) {
@@ -106,7 +105,6 @@ var selectSymbolPrompt = function() {
 
 //Generate a password
 var generatePassword = function() {
-    console.log(globalPWlength);
     var genPassword = "";
     for(var i = 0; i < globalPWlength;) {
         if (yesLower === "Y") {
@@ -128,9 +126,7 @@ var generatePassword = function() {
         }
 
         if (yesSymbol === "Y") {
-            var x = Math.floor(Math.random() * 6);
-            console.log("Special Char = " + genPassword);
-            console.log(sym);
+            var x = Math.floor(Math.random() * 20);
             genPassword += sym[x];
             i++;
         }
@@ -147,7 +143,7 @@ var generatePassword = function() {
             }        
         }
     }
-    // Display the result
+    // Display the results
     document.getElementById("password").innerHTML = genPassword;
 }
 
@@ -175,6 +171,7 @@ if (yesLower !=="Y") {
 
 generatePassword();
 
+//Original code not used
 
 // Add event listener to generate button 
 // Get references to the #generate element
