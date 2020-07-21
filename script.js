@@ -8,13 +8,15 @@ var yesLower = "N";
 var yesUpper = "N";
 var yesNum = "N";
 var yesSymbol = "N";
+var generateBtn = document.querySelector("#generate");
 
 
 // Prompt instruction for the user to begin
-window.alert("Welcome! Please click 'OK' to generate password!");
+//window.alert("Welcome! Please click 'OK' to generate password!");
 
 //Enter length of password
 var numberCharacters = function() {
+    //window.location.reload();
     var pwLength = window.prompt("Please select the length of your password. Password can only be bewteen 8 - 128 characters.");
     globalPWlength = parseInt(pwLength);
     if (pwLength === "" || pwLength === null || pwLength < 8 || pwLength > 128) {
@@ -105,6 +107,7 @@ var selectSymbolPrompt = function() {
 
 //Generate a password
 var generatePassword = function() {
+    //document.getElementById("password").value = '';
     var genPassword = "";
     for(var i = 0; i < globalPWlength;) {
         if (yesLower === "Y") {
@@ -147,42 +150,14 @@ var generatePassword = function() {
     document.getElementById("password").innerHTML = genPassword;
 }
 
-numberCharacters();
-lowerCasePrompt();
-upperCasePrompt();
-selectNumberPrompt();
-selectSymbolPrompt();
-
-//Check if all "N" was selected
-if (yesLower !=="Y") {
-    if (yesUpper !=="Y") {
-        if (yesNum !=="Y") {
-            if (yesSymbol !=="Y") {
-                window.alert("You cannot select 'No' for every option.  Try again!");
-                numberCharacters();
-                lowerCasePrompt();
-                upperCasePrompt();
-                selectNumberPrompt();
-                selectSymbolPrompt();
-            }
-        }
-    }        
-}
-
-generatePassword();
-
-//Original code not used
-
-// Add event listener to generate button 
-// Get references to the #generate element
-// Write password to the #password input
-
-//function writePassword() {
-//  var password = generatePassword();
-//  var passwordText = document.querySelector("#password");
-//
-//  passwordText.value = password;
-//}
-
-//.var get = document.querySelector("#generate");
-//    generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", function() {
+    document.getElementById("password").innerHTML = "";
+    setTimeout(function() {
+        numberCharacters();
+        lowerCasePrompt();
+        upperCasePrompt();
+        selectNumberPrompt();
+        selectSymbolPrompt();
+        generatePassword();
+    }, 1000);
+});
